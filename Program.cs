@@ -24,12 +24,37 @@ void task10(){
 
 void task13(){
     // Напишите программу, которая с помощью деления выводит третью цифру заданного числа или сообщает, что третьей цифры нет.
+    consoleWrite("Задача №13");
+    consoleWrite("Введите число - ", false);
+    int number = consoleReadInt();
     
+    if (number < 0) number = Math.Abs(number);
+    
+    if(number < 100){
+        consoleWrite("В данном числе нет третьей цифры");
+        return;
+    }
+
+    while (number > 999) {
+        number = number / 10;
+    }
+    
+    string result = Convert.ToString(number % 10);
+    consoleWrite($"Третья цифра заданного числа - {result}");
 }
+
 
 void task15(){
     // Напишите программу, которая принимает на вход цифру, обозначающую день недели, и проверяет, является ли этот день выходным.
-    
+    consoleWrite("Задача №15");
+    consoleWrite("Введите номер дня недели - ", false);
+    int number = consoleReadInt();
+    if((number > 7)||(number < 0)) {
+        consoleWrite($"В неделе нет {number} дня"); 
+        return;
+    }
+    if((number == 6)||(number==7)) consoleWrite($"{number} день недели - выходной день");
+    else consoleWrite($"{number} день недели - будний день");
 }
 
 consoleWrite("Домашнее задание №2");
